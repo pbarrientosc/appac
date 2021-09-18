@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 class DatatableController extends Controller
 {
     /**
-     * @return basic datatable blade
+     * @return basic ddatatable blade
      */
     public function showBasicDatatable()
     {
