@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Services\App\Crud;
 
 use App\Models\App\Crud\Crud;
@@ -14,7 +13,7 @@ class CrudService extends AppService
     }
 
     /**
-     * Get only name from Crud model
+     * Get only name from Crud model.
      * @return \Illuminate\Support\Collection
      */
     public function getName()
@@ -23,7 +22,7 @@ class CrudService extends AppService
     }
 
     /**
-     * Update Crud service
+     * Update Crud service.
      * @param Crud $crud
      * @return Crud
      */
@@ -39,10 +38,10 @@ class CrudService extends AppService
     }
 
     /**
-     * Delete Crud service
+     * Delete Crud service.
      * @param Crud $crud
-     * @return bool|null
      * @throws \Exception
+     * @return bool|null
      */
     public function delete(Crud $crud)
     {

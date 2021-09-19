@@ -73,6 +73,7 @@ class SidebarComposer
                     'view_basic_datatable', 'manage_functional_datatable', 'manage_advance_datatable',
                     'view_responsive_datatable', 'manage_filter_type_datatable', 'manage_paginated_datatable',
                     'manage_gird_view_datatable',
+                    'manage_plan_datatable',
                 ]),
                 'subMenu' => [
                     [
@@ -109,6 +110,11 @@ class SidebarComposer
                         'name' => trans('custom.paginated'),
                         'url' => '/tables/pagination',
                         'permission' => auth()->user()->can('manage_paginated_datatable'),
+                    ],
+                    [
+                        'name' => trans('custom.plan'),
+                        'url' => '/tables/plan',
+                        'permission' => auth()->user()->can('manage_plan_datatable'),
                     ],
                 ],
             ],

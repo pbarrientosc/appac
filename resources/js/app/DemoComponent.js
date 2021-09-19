@@ -36,6 +36,8 @@ Vue.component('datatable-pagination', require('./Components/Views/Demo/Tables/da
 Vue.component('grid-view-table', require('./Components/Views/Demo/Tables/grid-view/Index').default);
 Vue.component('grid-view', require('./Components/Views/Demo/Tables/grid-view/GridView').default);
 Vue.component('profile-card', require('./Components/Views/Demo/Tables/grid-view/ProfileCard').default);
+Vue.component('plan-datatable', require('./Components/Views/Demo/Tables/PlanDatatable').default);
+
 
 
 // UI Features
@@ -65,3 +67,6 @@ Vue.component('task-add-edit-modal', require('./Components/Views/Demo/Pages/kanb
 // Demo Crud
 Vue.component('app-demo-crud', require('./Components/Views/Demo/Tables/demo-crud/Index').default);
 Vue.component('app-add-modal', require('./Components/Views/Demo/Tables/demo-crud/AddModal').default);
+
+// Production PLAN
+Vue.component('app-plan-modal', require('./Components/Views/Production/Tables/Plan/ModalEdit').default);

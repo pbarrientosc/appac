@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Models\App\Traits;
-
 
 trait CrudValidationRules
 {
@@ -13,7 +11,7 @@ trait CrudValidationRules
             'email' => 'required|email',
             'status' => 'nullable|in:active,inactive,invited',
             'gender' => 'nullable|in:male,female,other',
-            'age' => 'nullable|numeric|max:120'
+            'age' => 'nullable|numeric|max:120',
         ];
     }
 
@@ -24,7 +22,7 @@ trait CrudValidationRules
             'email' => 'required|email',
             'status' => 'nullable|in:active,inactive,invited',
             'gender' => 'nullable|in:male,female,other',
-            'age' => 'nullable|numeric|max:120'
+            'age' => 'nullable|numeric|max:120',
         ];
     }
 }

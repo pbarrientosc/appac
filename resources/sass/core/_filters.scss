@@ -193,7 +193,7 @@
           .dropdown-item {
             .row {
               .col-6 {
-                &:last-child, &:nth-last-child(2) {
+                &:last-child {
                   .form-group {
                     margin-bottom: 0;
                   }

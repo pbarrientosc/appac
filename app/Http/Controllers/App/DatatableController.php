@@ -53,4 +53,11 @@ class DatatableController extends Controller
     {
         return view('tables.grid-view');
     }
+    /**
+     * @return plan datatable blade
+     */
+    public function planDataTable()
+    {
+        return view('tables.plan');
+    }
 }

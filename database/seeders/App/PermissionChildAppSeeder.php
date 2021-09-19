@@ -96,6 +96,11 @@ class PermissionChildAppSeeder extends Seeder
                 'type_id' => $appId,
                 'group_name' => 'datatable',
             ],
+            [
+                'name' => 'manage_plan_datatable',
+                'type_id' => $appId,
+                'group_name' => 'datatable',
+            ],
             //form
             [
                 'name' => 'view_form_layouts',
@@ -378,6 +383,26 @@ class PermissionChildAppSeeder extends Seeder
                 'name' => 'delete_payment_method',
                 'type_id' => $appId,
                 'group_name' => 'settings',
+            ],
+            [
+                'name' => 'query_plan',
+                'type_id' => $appId,
+                'group_name' => 'ogti',
+            ],
+            [
+                'name' => 'detail_plan',
+                'type_id' => $appId,
+                'group_name' => 'hiring',
+            ],
+            [
+                'name' => 'process_data_plan',
+                'type_id' => $appId,
+                'group_name' => 'hiring',
+            ],
+            [
+                'name' => 'contract_data_plan',
+                'type_id' => $appId,
+                'group_name' => 'hiring',
             ],
         ];
         $this->enableForeignKeys();

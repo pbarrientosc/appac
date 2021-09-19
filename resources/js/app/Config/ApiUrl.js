@@ -48,7 +48,17 @@ export const GET_EMAIL_SETTINGS = '/admin/app/settings/delivery-settings';
 
 //DataTable
 export const DATATABLE_DATA = 'crud';
+export const DATATABLE_PLAN = 'plan';
+
 export const DATATABLE_SEARCH_SELECT = '/datatable/name';
+export const DATATABLE_FILTER_STEPS_PLAN = '/datatable/plan/step';
+export const DATATABLE_FILTER_EXPENSIVE_TYPE_PLAN = '/datatable/plan/expense';
+export const DATATABLE_FILTER_USER_AREA = '/datatable/plan/user-area';
+export const DATATABLE_FILTER_ACQUISITION_METHOD = '/datatable/plan/acquisition-method';
+export const DATATABLE_FILTER_RESPONSABLE_OGTI = '/datatable/plan/responsable-ogti';
+export const DATATABLE_FILTER_EQUIPMENT_PAC = '/datatable/plan/equipment-pac';
+export const DATATABLE_FILTER_MODALITY_OGTI = '/datatable/plan/modality-ogti';
+export const DATATABLE_FILTER_STATUS_OGTI = '/datatable/plan/status-ogti';
 
 //roles and users
 export const ROLES = 'admin/auth/roles';

@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\App\Crud;
+namespace App\Http\Controllers\App\Plan;
 
-use App\Models\App\Crud\Crud;
-use App\Filters\App\Crud\CrudFilter;
+use App\Filters\App\Plan\PlanFilter;
+use App\Models\App\Plan\Plan;
 use App\Http\Controllers\Controller;
-use App\Services\App\Crud\CrudService;
-use App\Notifications\App\Crud\CrudNotification;
-use App\Http\Requests\App\CrudRequest as Request;
+use App\Services\App\Plan\PlanService;
+use App\Http\Requests\App\PlanRequest as Request;
 
-class CrudController extends Controller
+class PlanController extends Controller
 {
     /**
-     * CrudController constructor.
-     * @param CrudService $service
-     * @param CrudFilter $filter
+     * PlanController constructor.
+     * @param PlanService $service
+     * @param PlanFilter $filter
      */
-    public function __construct(CrudService $service, CrudFilter $filter)
+    public function __construct(PlanService $service, PlanFilter $filter)
     {
         $this->service = $service;
         $this->filter = $filter;
@@ -51,10 +50,10 @@ class CrudController extends Controller
     {
         $crud = $this->service->save();
 
-        notify()
-            ->on('row_created')
-            ->with($crud)
-            ->send(CrudNotification::class);
+//        notify()
+//            ->on('row_created')
+//            ->with($crud)
+//            ->send(CrudNotification::class);
 
         return created_responses('data');
     }
@@ -73,18 +72,18 @@ class CrudController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param Request $request
+     * @param Plan $plan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Crud $crud)
+    public function update(Request $request, Plan $plan)
     {
-        $crud = $this->service->update($crud);
+        $crud = $this->service->update($plan);
 
-        notify()
-            ->on('row_updated')
-            ->with($crud)
-            ->send(CrudNotification::class);
+//        notify()
+//            ->on('row_updated')
+//            ->with($crud)
+//            ->send(CrudNotification::class);
 
         return updated_responses('data');
     }
@@ -92,17 +91,17 @@ class CrudController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @throws \Exception
+     * @param Plan $plan
+     * @throws Exception
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Crud $crud)
+    public function destroy(Plan $plan)
     {
-        if ($this->service->delete($crud)) {
-            notify()
-                ->on('row_deleted')
-                ->with((object) $crud->toArray())
-                ->send(CrudNotification::class);
+        if ($this->service->delete($plan)) {
+//            notify()
+//                ->on('row_deleted')
+//                ->with((object) $crud->toArray())
+//                ->send(CrudNotification::class);
 
             return deleted_responses('data');
         }
@@ -110,8 +109,8 @@ class CrudController extends Controller
         return failed_responses();
     }
 
-    public function getNameFromDatatable()
+    public function getStepFromDatatable()
     {
-        return $this->service->getName();
+        return $this->service->getSteps();
     }
 }
