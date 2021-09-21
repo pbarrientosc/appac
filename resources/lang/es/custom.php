@@ -712,6 +712,7 @@ return [
     'mandrill' => 'Mandrill',
     'amazon_ses' => 'Amazon SES',
     'smtp' => 'SMTP',
+    'ssl' => 'SSL',
     'mailgun' => 'Mailgun',
     'sparkpost' => 'SparkPost',
     'sendmail' => 'Sendmail',

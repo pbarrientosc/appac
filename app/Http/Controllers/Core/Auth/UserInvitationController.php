@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers\Core\Auth;
 
-use App\Exceptions\GeneralException;
-use App\Hooks\User\AfterInvitationCanceled;
-use App\Hooks\User\AfterUserInvited;
-use App\Hooks\User\BeforeInvitationCanceled;
-use App\Hooks\User\BeforeUserInvited;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Core\Auth\User\UserInvitationRequest as Request;
-use App\Mail\Core\User\UserInvitationCancelMail;
 use App\Models\Core\Auth\User;
-use App\Models\App\User\SocialLink;
-use App\Models\Core\Status;
-use App\Notifications\Core\User\UserInvitationNotification;
-use App\Services\Core\Auth\UserInvitationService;
 use Illuminate\Support\Facades\DB;
+use App\Models\App\User\SocialLink;
+use App\Exceptions\GeneralException;
+use App\Hooks\User\AfterUserInvited;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use App\Hooks\User\BeforeUserInvited;
+use App\Hooks\User\AfterInvitationCanceled;
+use App\Hooks\User\BeforeInvitationCanceled;
+use App\Mail\Core\User\UserInvitationCancelMail;
+use App\Services\Core\Auth\UserInvitationService;
+use App\Notifications\Core\User\UserInvitationNotification;
+use App\Http\Requests\Core\Auth\User\UserInvitationRequest as Request;
 
 class UserInvitationController extends Controller
 {
-
     /**
      * @var BeforeUserInvited
      */
@@ -61,7 +59,7 @@ class UserInvitationController extends Controller
 
             log_to_database(trans('default.user_invited_to_join'), [
                 'old' => [],
-                'attributes' => $user
+                'attributes' => $user,
             ]);
 
             $user->load('roles');
@@ -73,16 +71,14 @@ class UserInvitationController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => trans('default.invite_user_response')
+            'message' => trans('default.invite_user_response'),
         ]);
-
     }
-
 
     public function cancel(User $user)
     {
         throw_if(
-            !$user->isInvited(),
+            ! $user->isInvited(),
             new GeneralException(__t('action_not_allowed'))
         );
 
@@ -94,7 +90,7 @@ class UserInvitationController extends Controller
             $this->service->setModel($user)->detachRoles()->delete();
 
             Mail::to($user->email)
-                ->send(new UserInvitationCancelMail((object)$user->toArray()));
+                ->send(new UserInvitationCancelMail((object) $user->toArray()));
 
             AfterInvitationCanceled::new(true)
                 ->setModel($user)
@@ -103,6 +99,4 @@ class UserInvitationController extends Controller
 
         return response()->json(['status' => true, 'message' => __t('user_invitation_canceled_successfully')]);
     }
-
-
 }

@@ -1,10 +1,9 @@
 <?php
 
-
 namespace App\Filters;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Builder;
 
 class FilterBuilder
 {
@@ -17,13 +16,12 @@ class FilterBuilder
         'not similar to', 'not ilike', '~~*', '!~~*',
     ];
 
-    public $attributes =[];
+    public $attributes = [];
 
     /**
      * @var Builder
      */
     public $builder;
-
 
     public function apply(Builder $query)
     {
@@ -36,7 +34,8 @@ class FilterBuilder
 
         foreach (request()->all() as $key => $filter) {
             $method_name = Str::camel($key);
-            if (method_exists($this, $method_name) && !strpos($key, 'operator')) {
+
+            if (method_exists($this, $method_name) && ! strpos($key, 'operator')) {
                 call_user_func_array([$this, $method_name], array_filter([sanitize_data($filter)]));
             }
         }
@@ -47,8 +46,9 @@ class FilterBuilder
     public function __get($name)
     {
         $name = Str::snake($name);
+
         if (strpos($name, 'operator')) {
-            return (!empty($this->attributes[$name]) && in_array($this->attributes[$name], $this->operators)) ?
+            return (! empty($this->attributes[$name]) && in_array($this->attributes[$name], $this->operators)) ?
                 $this->attributes[$name] :
                 '=';
         }
@@ -69,13 +69,16 @@ class FilterBuilder
                 $builder->{$whereClause}($param, 'LIKE', "%{$value}%");
                 $whereClause = 'orWhere';
             }
-            if ($callback) $callback($builder);
+
+            if ($callback) {
+                $callback($builder);
+            }
         });
     }
 
     public function whereInClause($field, array $values)
     {
-        return $this->builder->when($values, function(Builder $builder) use ($field, $values) {
+        return $this->builder->when($values, function (Builder $builder) use ($field, $values) {
             $builder->whereIn($field, $values);
         });
     }
@@ -84,7 +87,10 @@ class FilterBuilder
     {
         return $this->builder->when($value, function (Builder $builder) use ($param, $value, $callback) {
             $builder->where($param, 'LIKE', "%{$value}%");
-            if ($callback) $callback($builder);
+
+            if ($callback) {
+                $callback($builder);
+            }
         });
     }
 }

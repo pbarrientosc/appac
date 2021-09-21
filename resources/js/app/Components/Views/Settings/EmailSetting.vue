@@ -202,6 +202,7 @@ export default {
             encryptionType: [
                 {id: '', value: this.$t('choose_one')},
                 {id: 'tls', value: this.$t('tls')},
+                {id: 'ssl', value: this.$t('ssl')},
                 {id: 'ssh', value: this.$t('ssh')},
             ],
         }

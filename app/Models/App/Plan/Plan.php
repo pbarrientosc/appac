@@ -8,7 +8,7 @@ class Plan extends AppModel
 {
     protected $table = "plan";
 
-    protected $primaryKey = "cod_sepa";
+    protected $primaryKey = "id";
 
     protected $fillable = [
         'cod_sepa',

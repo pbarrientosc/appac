@@ -31,7 +31,7 @@ class PlanService extends AppService
      */
     public function getCodSepa()
     {
-        return $this->model->select('cod_sepa')->get();
+        return $this->model->select('id')->get();
     }
 
     /**
