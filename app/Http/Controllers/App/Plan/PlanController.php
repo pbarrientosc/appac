@@ -28,7 +28,6 @@ class PlanController extends Controller
     {
         return $this->service
             ->filters($this->filter)
-            ->latest()
             ->paginate(request()->get('per_page', 10));
     }
 

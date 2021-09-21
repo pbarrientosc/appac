@@ -174,6 +174,11 @@ export default {
           key: 'cod_sepa',
         },
         {
+          title: "Versión",
+          type: 'text',
+          key: 'num_version',
+        },
+        {
           title: "Código actividad",
           type: 'text',
           key: 'cod_actividad',
@@ -187,6 +192,9 @@ export default {
           title: "Etapa ID",
           type: 'text',
           key: 'mae_etapa_id',
+          modifier: (value, row) => {
+            return value;
+          },
         },
       ],
       typeForm: "",
@@ -239,7 +247,7 @@ export default {
      */
     getListAction(rowData, actionObj, active) {
       this.rowData = rowData;
-      this.selectedUrl = `${actions.DATATABLE_PLAN}/${rowData.cod_sepa}`;
+      this.selectedUrl = `${actions.DATATABLE_PLAN}/${rowData.id}`;
       if (actionObj.title === this.$t('detail')) {
         this.typeForm = 'detailed';
         this.modalTitle = 'Detalle';

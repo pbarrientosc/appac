@@ -14,33 +14,33 @@ class PlanFilter extends FilterBuilder
     public function stage($stage = null)
     {
         if ($stage) {
-            $this->whereClause('mae_etapa_id', array_values(explode(',', $stage)));
+            $this->whereInClause('mae_etapa_id', array_values(explode(',', $stage)));
         }
     }
 
     public function expenseType($expense_type = null)
     {
         if ($expense_type) {
-            $this->whereClause('mae_tipogasto_id', array_values(explode(',', $expense_type)));
+            $this->whereInClause('mae_tipogasto_id', array_values(explode(',', $expense_type)));
         }
     }
 
     public function userArea($user_area = null)
     {
         if ($user_area) {
-            $this->whereClause('mae_areausuaria_id', array_values(explode(',', $user_area)));
+            $this->whereInClause('mae_areausuaria_id', array_values(explode(',', $user_area)));
         }
     }
 
     public function acquisitionMethod($acquisition_method = null)
     {
         if ($acquisition_method) {
-            $this->whereClause('mae_metodoadquisicion_id', array_values(explode(',', $acquisition_method)));
+            $this->whereInClause('mae_metodoadquisicion_id', array_values(explode(',', $acquisition_method)));
         }
     }
 
     public function search($project = null)
     {
-        $this->singleSearch($project, 'des_objeto');
+        $this->singleSearch($project, 'search');
     }
 }

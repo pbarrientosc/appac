@@ -11,7 +11,7 @@
       <app-overlay-loader v-if="preloader"/>
       <form class="mb-0"
             :class="{'loading-opacity': preloader}"
-            ref="form" :data-url='selectedUrl ? `plan/${inputs.cod_sepa}` : `plan`'>
+            ref="form" :data-url='selectedUrl ? `plan/${inputs.id}` : `plan`'>
 
         <div class="form-elemtns" v-show="typeForm === 'detailed'">
 
@@ -397,66 +397,66 @@ export default {
   computed: {
     dateConvoca: {
       get() {
-        return moment(this.inputs.fec_convoca, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_convoca, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_convoca = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_convoca = moment(newValue).format("YYYY/MM/DD")
       }
     },
     dateInvitados: {
       get() {
-        return moment(this.inputs.fec_invitacandidatos, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_invitacandidatos, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_invitacandidatos = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_invitacandidatos = moment(newValue).format("YYYY/MM/DD")
       }
     },
     datePresenteOferta: {
       get() {
-        return moment(this.inputs.fec_presentaoferta, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_presentaoferta, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_presentaoferta = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_presentaoferta = moment(newValue).format("YYYY/MM/DD")
       }
     },
     dateEvaluacionExpresion: {
       get() {
-        return moment(this.inputs.fec_evaluaexpresion, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_evaluaexpresion, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_evaluaexpresion = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_evaluaexpresion = moment(newValue).format("YYYY/MM/DD")
       }
     },
     dateInterview: {
       get() {
-        return moment(this.inputs.fec_entrevista, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_entrevista, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_entrevista = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_entrevista = moment(newValue).format("YYYY/MM/DD")
       }
     },
     dateAward: {
       get() {
-        return moment(this.inputs.fec_adjudicacion, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_adjudicacion, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_adjudicacion = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_adjudicacion = moment(newValue).format("YYYY/MM/DD")
       }
     },
     dateContract: {
       get() {
-        return moment(this.inputs.fec_firmacontrato, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_firmacontrato, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_firmacontrato = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_firmacontrato = moment(newValue).format("YYYY/MM/DD")
       }
     },
     dateStart: {
       get() {
-        return moment(this.inputs.fec_iniciopreliminar, "DD/MM/YYYY").format("MM/DD/YYYY")
+        return moment(this.inputs.fec_iniciopreliminar, "YYYY/MM/DD").format("MM/DD/YYYY")
       },
       set(newValue) {
-        this.inputs.fec_iniciopreliminar = moment(newValue).format("DD/MM/YYYY")
+        this.inputs.fec_iniciopreliminar = moment(newValue).format("YYYY/MM/DD")
       }
     },
   },
