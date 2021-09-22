@@ -41,6 +41,6 @@ class PlanFilter extends FilterBuilder
 
     public function search($project = null)
     {
-        $this->singleSearch($project, 'search');
+        $this->singleSearch($project, 'des_objeto');
     }
 }
