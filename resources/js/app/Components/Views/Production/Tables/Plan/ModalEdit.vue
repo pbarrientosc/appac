@@ -1,10 +1,10 @@
 <template>
   <modal :modal-id="modalId"
          :title="modalTitle"
-         modalSize="extra-large"
+         modalSize="large"
          :modalScroll="false"
          modalAlignment="top"
-         size="extra-large"
+         size="large"
          @submit="submit"
          @close-modal="closeModal">
     <template slot="body">
@@ -14,6 +14,20 @@
             ref="form" :data-url='selectedUrl ? `plan/${inputs.id}` : `plan`'>
 
         <div class="form-elemtns" v-show="typeForm === 'detailed'">
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_flg_estadorqto" class="col-sm-3 mb-0">
+              {{ $t('statusPlan') }}
+            </label>
+
+            <app-input id="input_flg_estadorqto"
+                       type="select"
+                       class="col-sm-9"
+                       v-model="inputs.flg_estadorqto"
+                       :list="statusArray"/>
+          </div>
+
 
           <div class="form-group row align-items-center">
             <label for="input_mae_etapa_id" class="col-sm-3 mb-0">
@@ -37,6 +51,83 @@
                        class="col-sm-9"
                        v-model="inputs.des_proyecto"/>
           </div>
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_imp_costoadquisicion" class="col-sm-3 mb-0">
+              {{ $t('seller_awarded') }}
+            </label>
+
+            <app-input id="input_imp_costoadquisicion"
+                       class="col-sm-9"
+                       v-model="inputs.imp_costoadquisicion"/>
+          </div>
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_flg_revision" class="col-sm-3 mb-0">
+              {{ $t('review') }}
+            </label>
+
+            <app-input id="input_flg_revision"
+                       class="col-sm-9"
+                       v-model="inputs.flg_revision "/>
+          </div>
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_val_aporte" class="col-sm-3 mb-0">
+              {{ $t('value_contribution') }}
+            </label>
+
+            <app-input id="input_val_aporte"
+                       class="col-sm-9"
+                       v-model="inputs.val_aporte"/>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label for="input_fec_publicaprevista" class="col-sm-3 mb-0">
+              {{ $t('post_preview') }}
+            </label>
+
+            <app-input id="input_fec_publicaprevista"
+                       type="date"
+                       class="col-sm-9"
+                       v-model="datePostPreView"/>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label for="input_fec_iniciocontrato" class="col-sm-3 mb-0">
+              {{ $t('date_start_contract') }}
+            </label>
+
+            <app-input id="input_fec_iniciocontrato"
+                       type="date"
+                       class="col-sm-9"
+                       v-model="dateStartContract"/>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label for="input_fec_fincontrato" class="col-sm-3 mb-0">
+              {{ $t('date_end_contract') }}
+            </label>
+
+            <app-input id="input_fec_fincontrato"
+                       type="date"
+                       class="col-sm-9"
+                       v-model="dateEndContract"/>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label for="input_imp_costoactual" class="col-sm-3 mb-0">
+              {{ $t('price_actual') }}
+            </label>
+
+            <app-input id="input_imp_costoactual"
+                       class="col-sm-9"
+                       v-model="inputs.imp_costoactual"/>
+          </div>
+
 
           <div class="form-group row align-items-center">
             <label for="input_mae_tipogasto_id" class="col-sm-3 mb-0">
@@ -122,6 +213,7 @@
           </div>
 
 
+
         </div>
 
         <div class="form-elemtns" v-show="typeForm === 'process_data'">
@@ -183,7 +275,7 @@
 
           <div class="form-group row align-items-center">
             <label for="input_fec_entrevista" class="col-sm-3 mb-0">
-              {{ $t('date_entrevista') }}
+              {{ $t('date_interview') }}
             </label>
 
             <app-input id="input_fec_entrevista"
@@ -194,7 +286,7 @@
 
           <div class="form-group row align-items-center">
             <label for="input_fec_adjudicacion" class="col-sm-3 mb-0">
-              {{ $t('date_entrevista') }}
+              {{ $t('date_award') }}
             </label>
 
             <app-input id="input_fec_adjudicacion"
@@ -259,6 +351,52 @@
             <app-input id="input_nom_profesional"
                        class="col-sm-9"
                        v-model="inputs.nom_profesional"/>
+          </div>
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_fec_terminacontrato" class="col-sm-3 mb-0">
+              {{ $t('date_terminus') }}
+            </label>
+
+            <app-input id="input_fec_terminacontrato"
+                       type="date"
+                       class="col-sm-9"
+                       v-model="dateTerminus"/>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label for="input_des_comentario" class="col-sm-3 mb-0">
+              {{ $t('des_comment') }}
+            </label>
+
+            <app-input id="input_des_comentario"
+                       type="textarea"
+                       class="col-sm-9"
+                       v-model="inputs.des_comentario"/>
+          </div>
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_imp_pago" class="col-sm-3 mb-0">
+              {{ $t('imp_seller') }}
+            </label>
+
+            <app-input id="input_imp_pago"
+                       class="col-sm-9"
+                       v-model="inputs.imp_pago"/>
+          </div>
+
+
+          <div class="form-group row align-items-center">
+            <label for="input_fec_pago" class="col-sm-3 mb-0">
+              {{ $t('date_seller') }}
+            </label>
+
+            <app-input id="input_fec_pago"
+                       type="date"
+                       class="col-sm-9"
+                       v-model="dateSeller"/>
           </div>
 
         </div>
@@ -328,7 +466,7 @@
 
           <div class="form-group row align-items-center">
             <label for="input_fec_iniciopreliminar" class="col-sm-3 mb-0">
-              {{ $t('date_entrevista') }}
+              {{ $t('date_interview') }}
             </label>
 
             <app-input id="input_fec_iniciopreliminar"
@@ -380,6 +518,10 @@ export default {
         {id: 'active', value: "Active",},
         {id: 'inactive', value: "Inactive",},
         {id: 'invited', value: "Invite",},
+      ],
+      statusArray: [
+        {id: 'C', value: "Con Requerimiento",},
+        {id: 'S', value: "Sin requerimiento",},
       ],
       genderLists: [
         {id: 'male', value: "Male"},
@@ -457,6 +599,46 @@ export default {
       },
       set(newValue) {
         this.inputs.fec_iniciopreliminar = moment(newValue).format("YYYY/MM/DD")
+      }
+    },
+    dateTerminus: {
+      get() {
+        return moment(this.inputs.fec_terminacontrato, "YYYY/MM/DD").format("MM/DD/YYYY")
+      },
+      set(newValue) {
+        this.inputs.fec_terminacontrato = moment(newValue).format("YYYY/MM/DD")
+      }
+    },
+    dateSeller: {
+      get() {
+        return moment(this.inputs.fec_pago, "YYYY/MM/DD").format("MM/DD/YYYY")
+      },
+      set(newValue) {
+        this.inputs.fec_pago = moment(newValue).format("YYYY/MM/DD")
+      }
+    },
+    datePostPreView: {
+      get() {
+        return moment(this.inputs.fec_publicaprevista, "YYYY/MM/DD").format("MM/DD/YYYY")
+      },
+      set(newValue) {
+        this.inputs.fec_publicaprevista = moment(newValue).format("YYYY/MM/DD")
+      }
+    },
+    dateStartContract: {
+      get() {
+        return moment(this.inputs.fec_iniciocontrato, "YYYY/MM/DD").format("MM/DD/YYYY")
+      },
+      set(newValue) {
+        this.inputs.fec_iniciocontrato = moment(newValue).format("YYYY/MM/DD")
+      }
+    },
+    dateEndContract: {
+      get() {
+        return moment(this.inputs.fec_fincontrato, "YYYY/MM/DD").format("MM/DD/YYYY")
+      },
+      set(newValue) {
+        this.inputs.fec_fincontrato = moment(newValue).format("YYYY/MM/DD")
       }
     },
   },

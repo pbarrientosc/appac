@@ -111,11 +111,7 @@ class SidebarComposer
                         'url' => '/tables/pagination',
                         'permission' => auth()->user()->can('manage_paginated_datatable'),
                     ],
-                    [
-                        'name' => trans('custom.plan'),
-                        'url' => '/tables/plan',
-                        'permission' => auth()->user()->can('manage_plan_datatable'),
-                    ],
+
                 ],
             ],
             [
@@ -288,6 +284,21 @@ class SidebarComposer
                         'name' => trans('custom.error_503'),
                         'url' => '/error-503',
                         'permission' => auth()->user()->can('view_error_503'),
+                    ],
+                ],
+            ],
+            [
+                'id' => 'management_plan',
+                'icon' => 'grid',
+                'name' => trans('custom.management_plan'),
+                'permission' => authorize_any([
+                    'acquisition_plan',
+                ]),
+                'subMenu' => [
+                    [
+                        'name' => trans('custom.acquisition_plan'),
+                        'url' => '/tables/plan',
+                        'permission' => auth()->user()->can('acquisition_plan'),
                     ],
                 ],
             ],

@@ -169,7 +169,7 @@ export default {
       },
       columns: [
         {
-          title: "Código",
+          title: "Cod.SEPA",
           type: 'text',
           key: 'cod_sepa',
         },
@@ -189,11 +189,12 @@ export default {
           key: 'des_objeto',
         },
         {
-          title: "Etapa ID",
-          type: 'text',
-          key: 'mae_etapa_id',
+          title: "Etapa",
+          type: 'object',
+          key: 'mae_etapa_format',
           modifier: (value, row) => {
-            return value;
+             return row.mae_etapa_format ? row.mae_etapa_format.descripcion : "";
+            // return "a";
           },
         },
       ],

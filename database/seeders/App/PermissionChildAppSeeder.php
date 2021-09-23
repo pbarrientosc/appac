@@ -404,6 +404,11 @@ class PermissionChildAppSeeder extends Seeder
                 'type_id' => $appId,
                 'group_name' => 'hiring',
             ],
+            [
+                'name' => 'acquisition_plan',
+                'type_id' => $appId,
+                'group_name' => 'management',
+            ],
         ];
         $this->enableForeignKeys();
         Permission::query()->insert($permissions);

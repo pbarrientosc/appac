@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\App\Plan;
 
-use App\Filters\App\Plan\PlanFilter;
 use App\Models\App\Plan\Plan;
+use App\Models\App\Mae\MaeStage;
+use App\Filters\App\Plan\PlanFilter;
 use App\Http\Controllers\Controller;
 use App\Services\App\Plan\PlanService;
 use App\Http\Requests\App\PlanRequest as Request;
@@ -26,9 +27,19 @@ class PlanController extends Controller
      */
     public function index()
     {
-        return $this->service
+        $all = $this->service
             ->filters($this->filter)
             ->paginate(request()->get('per_page', 10));
+
+        foreach ($all as $key => $value) {
+            if ($value) {
+                $stage = MaeStage::where('id', $value->mae_etapa_id)->first();
+            }
+
+            $value->mae_etapa_format = empty($value) ? null : $stage;
+        }
+
+        return $all;
     }
 
     /**

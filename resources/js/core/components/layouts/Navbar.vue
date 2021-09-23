@@ -69,15 +69,15 @@
                             :data="languageData"
                         />
 
-                        <component
-                            :is="notificationComponent"
-                            :all-notification-url="allNotificationUrl"
-                            :data="notificationData"
-                            :show-identifier="showIdentifier"
-                            :total-unread="totalUnread"
-                            @clicked="sendNotification"
-                            @loadNotifications="$emit('loadNotifications')"
-                        />
+<!--                        <component-->
+<!--                            :is="notificationComponent"-->
+<!--                            :all-notification-url="allNotificationUrl"-->
+<!--                            :data="notificationData"-->
+<!--                            :show-identifier="showIdentifier"-->
+<!--                            :total-unread="totalUnread"-->
+<!--                            @clicked="sendNotification"-->
+<!--                            @loadNotifications="$emit('loadNotifications')"-->
+<!--                        />-->
 
                         <span class="topbar-divider d-none d-sm-block"/>
 

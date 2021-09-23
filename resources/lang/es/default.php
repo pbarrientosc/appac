@@ -320,13 +320,13 @@ return array_merge([
     'all_notifications' => 'All Notifications',
 
     // Tooltip titles
-    'collapse_sidebar' => 'Collapse sidebar',
-    'floating_sidebar' => 'Floating sidebar',
+    'collapse_sidebar' => 'Contraer barra lateral',
+    'floating_sidebar' => 'Barra lateral flotante',
     'full_sidebar' => 'Full sidebar',
-    'light_mood' => 'Light mood',
-    'dark_mood' => 'Dark mood',
-    'fullscreen' => 'Fullscreen',
-    'exit_fullscreen' => 'Exit fullscreen',
+    'light_mood' => 'Modo claro',
+    'dark_mood' => 'Modo oscuro',
+    'fullscreen' => 'Pantalla completa',
+    'exit_fullscreen' => 'Salir de pantalla completa',
 
     // Tenant Preview Card
     'invited_by' => 'Invited by',

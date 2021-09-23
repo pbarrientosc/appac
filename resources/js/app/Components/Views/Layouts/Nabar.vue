@@ -3,11 +3,9 @@
                 :user="user.loggedInUser"
                 :selected-language="userLanguage"
                 :language-data="languageList"
-                :notificationData="notificationList"
                 :profile-data="profileData"
-                :showIdentifier="showIdentifier"
                 all-notification-url="/all-notifications"
-                @clicked="readNotification"/>
+                />
 </template>
 
 <script>
@@ -30,22 +28,17 @@
             return{
                 profileData: [
                     {
-                        optionName: 'My Profile',
+                        optionName: 'Mi perfil',
                         optionIcon: 'user',
                         url: actions.MY_PROFILE
                     },
                     {
-                        optionName: 'Notifications',
-                        optionIcon: 'bell',
-                        url: actions.All_NOTIFICATION
-                    },
-                    {
-                        optionName: 'Settings',
+                        optionName: 'Ajustes',
                         optionIcon: 'settings',
                         url: actions.APP_SETTINGS
                     },
                     {
-                        optionName: 'Logout',
+                        optionName: 'Cerrar sesión',
                         optionIcon: 'log-out',
                         url: actions.LOGOUT
                     },
@@ -54,7 +47,7 @@
         },
         created() {
             this.$store.dispatch('getSettings');
-            this.$store.dispatch('getNotifications');
+            // this.$store.dispatch('getNotifications');
             this.$store.dispatch('setSelectedLanguage');
             this.$store.dispatch('getUser');
             this.$store.dispatch('getLanguages');
@@ -73,17 +66,17 @@
         },
 
         methods: {
-            ...mapActions([
-                'getNotifications'
-            ]),
-            readNotification(notification) {
-                axiosPost(`admin/user/notifications/mark-as-read/${notification.id}`).then(({data}) => {
-                    if (data.data.url) {
-                        window.location = data.data.url;
-                    }
-                    this.getNotifications();
-                });
-            }
+            // ...mapActions([
+            //     'getNotifications'
+            // ]),
+            // readNotification(notification) {
+            //     axiosPost(`admin/user/notifications/mark-as-read/${notification.id}`).then(({data}) => {
+            //         if (data.data.url) {
+            //             window.location = data.data.url;
+            //         }
+            //         this.getNotifications();
+            //     });
+            // }
         }
     }
 </script>

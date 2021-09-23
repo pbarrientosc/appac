@@ -38,7 +38,7 @@ class User extends BaseUser implements HasLocalePreference
 
     public function preferredLocale()
     {
-        return app()->getLocale() ?? 'en';
+        return app()->getLocale() ?? 'es';
     }
 
     public function getDescriptionForEvent(string $eventName): string

@@ -60,13 +60,13 @@ class NotificationTemplateSeeder extends Seeder
 
             }else if ($event->name == 'user_invitation') {
                 $mail = NotificationTemplate::create([
-                    'subject' => 'User invitation form {app_name}',
+                    'subject' => 'Formulario de invitación de usuario {app_name}',
                     'default_content' => '<p><img src="{app_logo}" style="height: 75px"></p>
 <p>
-</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hi {receiver_name}</span><br></p><p>Hope this mail finds you well and healthy. We are informing you that you\'ve been invited to our application by {action_by}. It\'ll be a great opportunity to work with you.</p><br>
+</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hola {receiver_name}</span><br></p><p>Espero que este correo lo encuentre bien y saludable. Le informamos que ha sido invitado a nuestra aplicación por {action_by}. Será una gran oportunidad trabajar contigo..</p><br>
 <p><a href="{invitation_url}" target="_blank" style="background: #4466F2;color: white;padding: 9px;border-radius: 4px;cursor: pointer; text-decoration: none; text-underline: none">Accept Invitation</a></p><br>
 
-<p></p><p>Thanks &amp; Regards,
+<p></p><p>Gracias y Saludos,
 </p><p>{app_name}</p>',
                     'custom_content' => null,
                     'type' => 'mail'
@@ -77,10 +77,10 @@ class NotificationTemplateSeeder extends Seeder
                 );
             }else if ($event->name == 'password_reset') {
                 $mail = NotificationTemplate::create([
-                    'subject' => 'Password reset link provided by {app_name}',
+                    'subject' => 'Enlace de restablecimiento de contraseña proporcionado por {app_name}',
                     'default_content' => '<p><img src="{app_logo}" style="height: 75px"></p>
 <p>
-</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hi {receiver_name}</span><br></p><p>Your request for reset password has been approved from {app_name}. Press the button below to reset the password.</p><br>
+</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hola {receiver_name}</span><br></p><p>Su solicitud de restablecimiento de contraseña ha sido aprobada por {app_name}. Presione el botón de abajo para restablecer la contraseña.</p><br>
 <p><a href="{reset_password_url}" style="background: #4466F2;color: white;padding: 9px;border-radius: 4px;cursor: pointer; text-decoration: none; text-underline: none" target="_blank">Reset password</a></p><br>
 
 We are highly expecting you as soon as possible. Hope you\'ll join us.
@@ -103,11 +103,11 @@ We are highly expecting you as soon as possible. Hope you\'ll join us.
     {
         return [
             'user_joined' => [
-                'system' => 'A new user has been joined in {app_name}',
-                'subject' => 'A new user has been joined in {app_name}',
+                'system' => 'Un nuevo usuario se ha unido {app_name}',
+                'subject' => 'Un nuevo usuario se ha unido {app_name}',
                 'content' => '<p><img src="{app_logo}" style="height: 75px"></p>
 <p>
-</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hi {receiver_name}</span><br></p><p>It\'s a piece of good news that a new user {name} has been joined in our application invited by {action_by}. Hope you will enjoy his work and collaborations.</p><br>
+</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hola {receiver_name}</span><br></p><p>Es una buena noticia que un nuevo usuario {name} se haya unido a nuestra aplicación invitado por {action_by}. Espero que disfrutes de su trabajo y colaboraciones..</p><br>
 <p><a href="{resource_url}" style="background: #4466F2;color: white;padding: 9px;border-radius: 4px;cursor: pointer; text-decoration: none; text-underline: none" target="_blank">View Resource</a></p><br>
 
 <p></p><p>Thanks for being with us.
@@ -118,7 +118,7 @@ We are highly expecting you as soon as possible. Hope you\'ll join us.
                 'subject' => 'A new user has been invited in {app_name}',
                 'content' => '<p><img src="{app_logo}" style="height: 75px"></p>
 <p>
-</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hi {receiver_name}</span><br></p><p>It\'s a piece of good news that a new user {name} has been invited in our application, invited by {action_by}.</p><br>
+</p><p><span style="background-color: var(--form-control-bg) ; color: var(--default-font-color) ;">Hola {receiver_name}</span><br></p><p>Es una buena noticia que un nuevo usuario {name} haya sido invitado a nuestra aplicación, invitado por{action_by}.</p><br>
 <p><a href="{resource_url}" style="background: #4466F2;color: white;padding: 9px;border-radius: 4px;cursor: pointer; text-decoration: none; text-underline: none" target="_blank">View Resource</a></p><br>
 <p></p><p>Thanks for being with us.
 </p><p>Regards,</p><p>{app_name}</p><p></p><p></p>'
