@@ -53,6 +53,7 @@ class Plan extends AppModel
         'mae_equipopac_id',
         'mae_modalidadogti_id',
         'mae_responsableogti_id',
+        'mae_estadosogti_id',
         'des_observacionesogti',
         'fec_iniciopreliminar',
     ];
