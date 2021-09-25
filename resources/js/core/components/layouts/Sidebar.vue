@@ -2,10 +2,10 @@
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
       <a class="navbar-brand brand-logo" :href="logoUrl">
-        <img :src="logoSrc" alt="logo"/>
+        <img src="/images/a_2.jpg" alt="logo"/>
       </a>
       <a class="navbar-brand brand-logo-mini" :href="logoUrl">
-        <img :src="logoIconSrc" alt="logo"/>
+        <img src="/images/a_2.jpg" alt="logo"/>
       </a>
     </div>
 

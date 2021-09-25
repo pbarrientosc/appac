@@ -155,6 +155,16 @@ export default {
             "key": "acquisition_method",
             "option": [],
           },
+          {
+            "title": this.$t('filter_responsible'),
+            "type": "radio",
+            "key": "responsible",
+            "option": [],
+            "header": {
+              "title": this.$t('title_responsible'),
+              "description": this.$t('description_responsible'),
+            },
+          },
         ],
         showFilter: true,
         showSearch: true,
@@ -216,6 +226,10 @@ export default {
     this.getExpensiveTypeFilterOptions();
     this.getUserAreaFilterOptions();
     this.getAcquisitionMethodFilterOptions();
+    this.getResponsableOgtiFilterOptions();
+    this.getEquipmentPacFilterOptions();
+    this.getModalityOgtiFilterOptions();
+    this.getStatusOgtiFilterOptions();
   },
   methods: {
     /**
@@ -240,6 +254,10 @@ export default {
       this.getExpensiveTypeFilterOptions();
       this.getUserAreaFilterOptions();
       this.getAcquisitionMethodFilterOptions();
+      this.getResponsableOgtiFilterOptions();
+      this.getEquipmentPacFilterOptions();
+      this.getModalityOgtiFilterOptions();
+      this.getStatusOgtiFilterOptions();
       this.reSetData();
     },
 
@@ -380,7 +398,17 @@ export default {
       });
     },
     getResponsableOgtiFilterOptions() {
+
       this.axiosGet(actions.DATATABLE_FILTER_RESPONSABLE_OGTI).then(response => {
+        let responsible = this.options.filters.find(element => element.title === this.$t('filter_responsible'));
+
+        responsible.option = response.data.map(data => {
+          return {
+            id: data.id,
+            value: data.descripcion
+          }
+        });
+
         this.responsableOgtiArray = response.data.map(data => {
           return {
             id: data.id,

@@ -11,6 +11,11 @@ class PlanFilter extends FilterBuilder
         $this->whereClause('flg_estadorqto', $status);
     }
 
+    public function responsible($status = null)
+    {
+        $this->whereClause('mae_responsableogti_id', $status);
+    }
+
     public function stage($stage = null)
     {
         if ($stage) {

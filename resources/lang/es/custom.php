@@ -112,6 +112,9 @@ return [
     'filter_expense_type' => 'Filtro tipo de gasto',
     'filter_user_area' => 'Filtro area de usuario',
     'filter_acquisition_method' => 'Filtro método de adquisición',
+    'filter_responsible' => 'Filtro responsable',
+    'title_responsible' => 'Responsable',
+    'description_responsible' => 'Filtre por responsable',
 
     'detail' => 'Detalle',
     'stage' => 'Etapa',
@@ -140,8 +143,8 @@ return [
     'name_professional' => 'Nombre de profesional',
     'responsable_ogti' => 'Responsable OGTI',
     'equipment_pac' => 'Equipos PAC',
-    'modality_ogti' => 'Modality OGTI',
-    'status_ogti' => 'Status OGTI',
+    'modality_ogti' => 'Modalidad',
+    'status_ogti' => 'Estado',
     'date_terminus' => 'Fecha de término',
     'des_comment' => 'Comentario',
     'imp_seller' => 'Porcentaje de pago',
@@ -510,7 +513,7 @@ return [
 
     // User and Roles
     'no_of_users' => 'No. Of users',
-    'user_and_roles' => 'Users & Roles',
+    'user_and_roles' => 'Usuarios y Roles',
     'custom_fields' => 'Custom fields',
     'templates' => 'Templates',
     'notification_events' => 'Notification events',

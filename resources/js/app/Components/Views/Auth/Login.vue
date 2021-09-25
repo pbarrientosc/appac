@@ -12,7 +12,7 @@
                           ref="form" data-url="/admin/users/login" action="store">
 
                         <div class="text-center mb-4">
-                            <img :src="configData.company_logo" alt=""
+                            <img src="/images/a_1.jpg" alt=""
                                  class="img-fluid logo">
                         </div>
                         <div class="form-row">
@@ -63,7 +63,7 @@
                         <div class="form-row">
                             <div class="col-12">
                                 <p class="text-center mt-5">
-                                    {{ $t('copyright_text') + configData.company_name }}
+                                  Administrado por UE011 - 2021
                                 </p>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
         },
         data() {
             return {
-                login: {email: 'admin@demo.com', password: '123456'},
+                login: {email: '', password: ''},
             };
         },
         methods: {

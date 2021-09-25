@@ -7,6 +7,7 @@ use App\Models\App\Mae\MaeEquipmentPac;
 use App\Models\App\Mae\MaeModalityOgti;
 use App\Models\App\Mae\MaeResponsableOgti;
 use App\Models\App\Mae\MaeStage;
+use App\Models\App\Mae\MaeStatusOgti;
 use App\Models\App\Mae\MaeUserArea;
 use App\Services\App\AppService;
 use App\Models\App\Mae\MaeExpenseType;
