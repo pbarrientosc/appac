@@ -2,7 +2,7 @@
   <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
       <a href="" class="align-self-center d-lg-none pl-0 navbar-brand">
-        <img :src="logoUrl" alt="logo"/>
+        <img src="/images/a_2.jpg" alt="logo"/>
       </a>
       <div class="d-flex justify-content-between w-100">
         <div class="d-flex justify-content-start">
