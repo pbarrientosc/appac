@@ -6,6 +6,7 @@
          modalAlignment="top"
          size="large"
          @submit="submit"
+         :hiddenButtons="typeForm != 'query_data' && (findRole('OGTI') || findRole('Rol Publico'))"
          @close-modal="closeModal">
     <template slot="body">
       <app-overlay-loader v-if="preloader"/>
@@ -24,6 +25,7 @@
             <app-input id="input_flg_estadorqto"
                        type="select"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.flg_estadorqto"
                        :list="statusArray"/>
           </div>
@@ -37,6 +39,7 @@
             <app-input id="input_mae_etapa_id"
                        type="select"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.mae_etapa_id"
                        :list="stageArray"/>
           </div>
@@ -49,6 +52,7 @@
             <app-input id="input_des_proyecto"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_proyecto"/>
           </div>
 
@@ -60,6 +64,7 @@
 
             <app-input id="input_imp_costoadquisicion"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.imp_costoadquisicion"/>
           </div>
 
@@ -71,6 +76,7 @@
 
             <app-input id="input_flg_revision"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.flg_revision "/>
           </div>
 
@@ -82,6 +88,7 @@
 
             <app-input id="input_val_aporte"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.val_aporte"/>
           </div>
 
@@ -93,6 +100,7 @@
             <app-input id="input_fec_publicaprevista"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="datePostPreView"/>
           </div>
 
@@ -104,6 +112,7 @@
             <app-input id="input_fec_iniciocontrato"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateStartContract"/>
           </div>
 
@@ -115,6 +124,7 @@
             <app-input id="input_fec_fincontrato"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateEndContract"/>
           </div>
 
@@ -125,6 +135,7 @@
 
             <app-input id="input_imp_costoactual"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.imp_costoactual"/>
           </div>
 
@@ -137,6 +148,7 @@
             <app-input id="input_mae_tipogasto_id"
                        type="select"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.mae_tipogasto_id"
                        :list="expenseArray"/>
           </div>
@@ -149,6 +161,7 @@
             <app-input id="input_mae_areausuaria_id"
                        type="select"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.mae_areausuaria_id"
                        :list="areaUserArray"/>
           </div>
@@ -162,6 +175,7 @@
             <app-input id="input_mae_metodoadquisicion_id"
                        type="select"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.mae_metodoadquisicion_id"
                        :list="acquisitionMethodArray"/>
           </div>
@@ -174,6 +188,7 @@
             <app-input id="input_des_requsuario"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_requsuario"/>
           </div>
 
@@ -185,6 +200,7 @@
             <app-input id="input_des_oficiobid"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_oficiobid"/>
           </div>
 
@@ -197,6 +213,7 @@
             <app-input id="input_des_noobjecion"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_noobjecion"/>
           </div>
 
@@ -209,6 +226,7 @@
             <app-input id="input_des_certificacion"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_certificacion"/>
           </div>
 
@@ -226,6 +244,7 @@
             <app-input id="input_des_proceso"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_proceso"/>
           </div>
 
@@ -237,6 +256,7 @@
             <app-input id="input_fec_convoca"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateConvoca"/>
           </div>
 
@@ -248,6 +268,7 @@
             <app-input id="input_fec_invitacandidatos"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateInvitados"/>
           </div>
 
@@ -259,6 +280,7 @@
             <app-input id="input_fec_presentaoferta"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="datePresenteOferta"/>
           </div>
 
@@ -270,6 +292,7 @@
             <app-input id="input_fec_evaluaexpresion"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateEvaluacionExpresion"/>
           </div>
 
@@ -281,6 +304,7 @@
             <app-input id="input_fec_entrevista"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateInterview"/>
           </div>
 
@@ -292,6 +316,7 @@
             <app-input id="input_fec_adjudicacion"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateAward"/>
           </div>
 
@@ -307,6 +332,7 @@
             <app-input id="input_fec_firmacontrato"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateContract"/>
           </div>
 
@@ -318,6 +344,7 @@
             <app-input id="input_des_contrato"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_contrato"/>
           </div>
 
@@ -329,6 +356,7 @@
             <app-input id="input_des_adjudicado"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_adjudicado"/>
           </div>
 
@@ -339,6 +367,7 @@
 
             <app-input id="input_num_ruc"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.num_ruc"/>
           </div>
 
@@ -350,6 +379,7 @@
 
             <app-input id="input_nom_profesional"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.nom_profesional"/>
           </div>
 
@@ -362,6 +392,7 @@
             <app-input id="input_fec_terminacontrato"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateTerminus"/>
           </div>
 
@@ -373,6 +404,7 @@
             <app-input id="input_des_comentario"
                        type="textarea"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.des_comentario"/>
           </div>
 
@@ -384,6 +416,7 @@
 
             <app-input id="input_imp_pago"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="inputs.imp_pago"/>
           </div>
 
@@ -396,6 +429,7 @@
             <app-input id="input_fec_pago"
                        type="date"
                        class="col-sm-9"
+                       :disabled="findRole('OGTI') || findRole('Rol Publico')"
                        v-model="dateSeller"/>
           </div>
 
@@ -486,10 +520,12 @@
 import {FormMixin} from '../../../../../../core/mixins/form/FormMixin.js';
 import {ModalMixin} from "../../../../../Mixins/ModalMixin";
 import moment from "moment";
+import {ActionMixin} from "../../../../../../core/components/datatable/mixin/ActionMixin";
+import {UserMixin} from "../../../Auth/Mixins/UserMixin";
 
 export default {
   name: "ModalEditPlan",
-  mixins: [FormMixin, ModalMixin],
+  mixins: [FormMixin, ModalMixin, UserMixin],
   props: {
     tableId: String,
     modalTitle: {
@@ -651,7 +687,17 @@ export default {
       this.$toastr.s(response.data.message);
       this.$hub.$emit('reload-' + this.tableId);
     },
+    findRole(role) {
+      if (_.find(this.user.loggedInUser.roles, {'name': 'App Admin'})) {
+        return false;
+      }
 
+      if (_.find(this.user.loggedInUser.roles, {'name': role})) {
+        return true;
+      }
+
+      return false
+    },
     afterSuccessFromGetEditData(response) {
       if (response.data.phone) this.phone = response.data.phone;
       this.inputs = response.data;

@@ -84,7 +84,6 @@ export default {
             className: 'btn-primary mr-2',
             component: 'app-plan-modal',
             modalId: 'demo-add-edit-Modal',
-            showRole: 'Contrataciones'
           },
           {
             title: this.$t('process_data'),
@@ -93,7 +92,6 @@ export default {
             className: 'btn-primary mr-2',
             component: 'app-plan-modal',
             modalId: 'demo-add-edit-Modal',
-            showRole: 'Contrataciones'
           },
           {
             title: this.$t('contract_data'),
@@ -102,7 +100,6 @@ export default {
             className: 'btn-primary mr-2',
             component: 'app-plan-modal',
             modalId: 'demo-add-edit-Modal',
-            showRole: 'Contrataciones'
 
           },
           {
@@ -112,7 +109,6 @@ export default {
             className: 'btn-primary mr-2',
             component: 'app-plan-modal',
             modalId: 'demo-add-edit-Modal',
-            showRole: 'OGTI'
 
           },
 

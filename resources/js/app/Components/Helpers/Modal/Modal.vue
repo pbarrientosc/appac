@@ -24,7 +24,7 @@
     </template>
 
     <template slot="footer">
-      <div :class="{'loading-opacity': preloader}">
+      <div :class="{'loading-opacity': preloader}" v-show="!hiddenButtons">
         <button type="button"
                 class="btn btn-secondary mr-2"
                 data-dismiss="modal"
@@ -52,6 +52,10 @@ export default {
       default: "top"
     },
     preloader: {
+      type: Boolean,
+      default: false
+    },
+    hiddenButtons: {
       type: Boolean,
       default: false
     },
