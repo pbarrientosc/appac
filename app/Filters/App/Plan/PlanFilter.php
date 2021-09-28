@@ -8,12 +8,16 @@ class PlanFilter extends FilterBuilder
 {
     public function filterWithStatus($status = null)
     {
-        $this->whereClause('flg_estadorqto', $status);
+        if ($status) {
+            $this->whereInClause('flg_estadorqto', array_values(explode(',', $status)));
+        }
     }
 
     public function responsible($status = null)
     {
-        $this->whereClause('mae_responsableogti_id', $status);
+        if ($status) {
+            $this->whereInClause('mae_responsableogti_id', array_values(explode(',', $status)));
+        }
     }
 
     public function stage($stage = null)

@@ -112,8 +112,8 @@ return [
     'filter_expense_type' => 'Filtro tipo de gasto',
     'filter_user_area' => 'Filtro area de usuario',
     'filter_acquisition_method' => 'Filtro método de adquisición',
-    'filter_responsible' => 'Filtro responsable',
-    'title_responsible' => 'Responsable',
+    'filter_responsible' => 'Filtro Profesional Usuario',
+    'title_responsible' => 'Responsable de seguimiento',
     'description_responsible' => 'Filtre por responsable',
 
     'detail' => 'Detalle',

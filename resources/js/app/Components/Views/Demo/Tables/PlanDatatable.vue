@@ -116,7 +116,7 @@ export default {
         filters: [
           {
             "title": "Estado requerimiento",
-            "type": "radio",
+            "type": "checkbox",
             "key": "filter-with-status",
             "option": [
               {id: 'C', value: 'Con requerimiento'},
@@ -124,7 +124,6 @@ export default {
             ],
             "header": {
               "title": this.$t('want_to_filter_your_list'),
-              "description": this.$t('you_can_filter_your_data_table_which_are_created_based_on_required'),
             },
           },
           {
@@ -153,12 +152,11 @@ export default {
           },
           {
             "title": this.$t('filter_responsible'),
-            "type": "radio",
+            "type": "checkbox",
             "key": "responsible",
             "option": [],
             "header": {
               "title": this.$t('title_responsible'),
-              "description": this.$t('description_responsible'),
             },
           },
         ],
